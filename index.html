@@ -4,37 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3 Pilgrim LLC</title>
-.quotes {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 2rem auto 1rem;
+.quote-frame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 0 5%;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #444;
-  min-height: 3rem;
 }
-.quote-left {
-  position: absolute;
-  left: 5%;
-  width: 35%;
+
+.left-quote,
+.right-quote {
+  width: 40%;
+}
+
+.left-quote {
   text-align: left;
 }
-.quote-right {
-  position: absolute;
-  right: 5%;
-  width: 35%;
+
+.right-quote {
   text-align: right;
 }
-@media (max-width: 768px) {
-  .quote-left, .quote-right {
-    position: static;
-    width: 90%;
-    margin: 0.5rem auto;
-    display: block;
+
+/* Mobile-friendly stacking */
+@media (max-width: 800px) {
+  .quote-frame {
+    flex-direction: column;
     text-align: center;
   }
+  .left-quote,
+  .right-quote {
+    width: 90%;
+    margin-bottom: 0.5rem;
+  }
 }
+
 
 </head>
 <body>
@@ -42,10 +49,15 @@
     <img src="assets/logo.png" alt="3 Pilgrim LLC Logo">
   </header>
 
-<div class="quotes">
-  <div class="quote-left">“The price of knowledge is the acceptance of truth, in whatever form it takes.”</div>
-  <div class="quote-right">“The pursuit of knowledge requires the discovery of truth.”</div>
+<div class="quote-frame">
+  <div class="left-quote">
+    “The actions of man are governed by law; a language which can obscure true intent.”
+  </div>
+  <div class="right-quote">
+    “Nature is. We command our behavior only; the balance of these two should be our collective goal.”
+  </div>
 </div>
+
 
 
   <nav>
