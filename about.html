@@ -36,36 +36,44 @@
       transform: translateX(10px); /* small right offset */
     }
 
-/* -------- QUOTE LAYER -------- */
-.quote-layer {
-  position: absolute;
-  top: 30px; /* adjust this to move quotes up/down */
-  left: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 25%;
-  box-sizing: border-box;
-}
+    .content {
+      width: 70%;             /* narrows text for easier reading */
+      margin: 60px auto;      /* centers content horizontally and adds vertical spacing */
+      text-align: left;       /* aligns paragraphs neatly */
+      line-height: 1.6;       /* improves readability */
+      font-size: 16px;        /* consistent with your quotes/nav */
+     }
+    
+    /* -------- QUOTE LAYER -------- */
+    .quote-layer {
+      position: absolute;
+      top: 30px; /* adjust this to move quotes up/down */
+      left: 0;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0 25%;
+      box-sizing: border-box;
+    }
 
-.quote-left,
-.quote-right {
-  width: 250px;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #000;
-  font-family: "Georgia", serif;
-}
+    .quote-left,
+    .quote-right {
+      width: 250px;
+      font-size: 16px;
+      line-height: 1.4;
+      color: #000;
+      font-family: "Georgia", serif;
+     }
 
-.quote-left {
-  text-align: left;
-}
+     .quote-left {
+      text-align: left;
+      }
 
-.quote-right {
-  text-align: left;
-}
+      .quote-right {
+      text-align: left;
+       }
 
 
     /* -------- NAVIGATION -------- */
@@ -165,13 +173,7 @@
     <a href="legal.html">Legal</a>
   </nav>
 <main class="content">
-  {
-  width: 70%;             /* narrows text for easier reading */
-  margin: 60px auto;      /* centers content horizontally and adds vertical spacing */
-  text-align: left;       /* aligns paragraphs neatly */
-  line-height: 1.6;       /* improves readability */
-  font-size: 16px;        /* consistent with your quotes/nav */
-}
+ 
   <h2>About</h2>
 
   <p><strong>Origins:</strong> The genesis of our creation was catalyzed by Frank C. Meyer, founder of Glenwood Capital and early backer of Citadel Investment Group. Upon his retirement, three individuals made a quiet pilgrimage to Florida, united by shared experience and purpose: to explore new ventures beyond the traditional boundaries of finance.</p>
