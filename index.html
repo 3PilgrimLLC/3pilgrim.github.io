@@ -32,7 +32,7 @@
       width: 600px;
       height: auto;
       display: block;
-      margin: -60px auto 0 auto;
+      margin: -50px auto 0 auto;
       transform: translateX(10px); /* small right offset */
     }
 
@@ -68,12 +68,15 @@
 
     /* -------- NAVIGATION -------- */
     .main-nav {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 100px; /* adjust to match ellipse width */
-      font-size: 18px;
-      font-family: "Georgia", serif;
+  position: absolute;
+  top: 200px;          /* raise links closer under the ellipse */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;           /* keep spacing between links */
+  font-size: 18px;
+  font-family: "Georgia", serif;
     }
 
     .main-nav a {
