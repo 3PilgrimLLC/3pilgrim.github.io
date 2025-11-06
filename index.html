@@ -12,16 +12,17 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      .quote-left {
+ .quote-left {
   position: absolute;
-  top: 180px;         /* vertical position — adjust to taste */
-  left: 60px;         /* horizontal offset from the left edge */
-  width: 300px;       /* controls text width */
-  font-family: "Poor Richard", serif;
+  top: 140px;     /* fixed pixel value — adjust up/down as needed */
+  left: 50px;     /* fixed pixel value — adjust left/right as needed */
+  width: 280px;
   font-size: 16px;
-  color: #000;
   line-height: 1.4;
+  color: #222;
   text-align: left;
+}
+  }
 }
       /* HERO wrapper — establishes a positioning context */
 .hero {
@@ -56,15 +57,9 @@
 }
 
 /* LEFT quote: positioned relative to .hero */
-.quote-left {
-  position: absolute;
-  top: 18%;              /* percentage is relative to .hero height; adjusts responsively */
-  left: 6%;              /* move in from left edge; tweak by px or % as needed */
-  width: 28%;            /* width of the quote block */
-  font-size: 16px;
-  line-height: 1.4;
-  color: #222;
-  text-align: left;
+<div class="quote-left">
+  <p>The price of knowledge is the acceptance of truth, in whatever form it takes.</p>
+</div>
 }
 
 /* RIGHT quote: mirror of left */
@@ -84,10 +79,14 @@
   .quote-left, .quote-right {
     position: static;
     width: 90%;
-    margin: 0.6rem auto;
+    margin: 1rem auto;
     text-align: center;
   }
-  .ellipse { width: 80%; transform: translateX(0); margin-top: -30px; }
+  /* Ellipse resize for mobile */
+  .ellipse { 
+    width: 80%; 
+    transform: translateX(0); 
+    margin-top: -30px; 
 }
 
     }
