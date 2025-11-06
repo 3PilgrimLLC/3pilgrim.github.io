@@ -33,6 +33,28 @@
       transform: translateX(10px); /* small right offset */
     }
 
+    /* ----------- NAVIGATION ----------- */
+     .main-nav {
+       margin-top: 10px;            /* distance below ellipse */
+       display: flex;
+       justify-content: center;
+       gap: 100px;                  /* space between links — adjust to fit ellipse width */
+       font-size: 18px;
+       font-family: "Georgia", serif;
+     }
+
+.main-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #444;
+}
+    
     /* ----------- FOOTER ----------- */
     footer {
       width: 80%;
@@ -61,6 +83,12 @@
   <header>
     <img src="assets/logo.png" alt="3 Pilgrim LLC Logo" class="logo">
     <img src="assets/ellipse.png" alt="Decorative ellipse" class="ellipse">
+      <nav class="main-nav">
+        <a href="about.html">About</a>
+        <a href="library.html">Library</a>
+        <a href="contact.html">Contact</a>
+        <a href="legal.html">Legal</a>
+      </nav>
   </header>
 
   <!-- ---------- FOOTER ---------- -->
