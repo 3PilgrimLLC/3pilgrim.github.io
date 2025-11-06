@@ -23,18 +23,89 @@
   line-height: 1.4;
   text-align: left;
 }
+      /* HERO wrapper — establishes a positioning context */
+.hero {
+  position: relative;          /* critical: absolute children are relative to this */
+  padding-top: 40px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* logo + ellipse are in a centered block */
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* logo sizing */
+.logo {
+  width: 125px; /* keep your current size */
+  height: auto;
+}
+
+/* ellipse sizing and slight upward overlap control if needed */
+.ellipse {
+  width: 600px;   /* your chosen size */
+  height: auto;
+  margin-top: -60px; /* fine tune as you did earlier */
+  transform: translateX(10px); /* keeps your 10px right nudge */
+  display: block;
+}
+
+/* LEFT quote: positioned relative to .hero */
+.quote-left {
+  position: absolute;
+  top: 18%;              /* percentage is relative to .hero height; adjusts responsively */
+  left: 6%;              /* move in from left edge; tweak by px or % as needed */
+  width: 28%;            /* width of the quote block */
+  font-size: 16px;
+  line-height: 1.4;
+  color: #222;
+  text-align: left;
+}
+
+/* RIGHT quote: mirror of left */
+.quote-right {
+  position: absolute;
+  top: 18%;
+  right: 6%;
+  width: 28%;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #222;
+  text-align: right;
+}
+
+/* Mobile: stack quotes under the hero and center them */
+@media (max-width: 800px) {
+  .quote-left, .quote-right {
+    position: static;
+    width: 90%;
+    margin: 0.6rem auto;
+    text-align: center;
+  }
+  .ellipse { width: 80%; transform: translateX(0); margin-top: -30px; }
+}
+
     }
 
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-          }
+<header class="hero">
+  <div class="logo-block">
+    <img src="assets/logo.png" alt="3 Pilgrim LLC logo" class="logo">
+    <img src="assets/ellipse.png" alt="decorative ellipse" class="ellipse">
+  </div>
 
-    <div class="quote-left">
-  <p>The price of knowledge is the acceptance of truth, in whatever form it takes.</p>
-</div>
+  <div class="quote-left">
+    <p>The price of knowledge is the acceptance of truth, in whatever form it takes.</p>
+  </div>
+
+  <div class="quote-right">
+    <p>The pursuit of knowledge requires the discovery of truth.</p>
+  </div>
+</header>
     
     .logo {
       width: 125px;
