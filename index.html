@@ -5,183 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3 Pilgrim LLC</title>
   <style>
+    /* ----------- GLOBAL STYLES ----------- */
     body {
-      background-color: white;
-      color: black;
-      font-family: "Georgia", "Times New Roman", serif;
-      text-align: center;
       margin: 0;
       padding: 0;
- .quote-left {
-  position: absolute;
-  top: 140px;     /* fixed pixel value — adjust up/down as needed */
-  left: 50px;     /* fixed pixel value — adjust left/right as needed */
-  width: 280px;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #222;
-  text-align: left;
-}
-  }
-}
-      /* HERO wrapper — establishes a positioning context */
-.hero {
-  position: relative;          /* critical: absolute children are relative to this */
-  padding-top: 40px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* logo + ellipse are in a centered block */
-.logo-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* logo sizing */
-.logo {
-  width: 125px; /* keep your current size */
-  height: auto;
-}
-
-/* ellipse sizing and slight upward overlap control if needed */
-.ellipse {
-  width: 600px;   /* your chosen size */
-  height: auto;
-  margin-top: -60px; /* fine tune as you did earlier */
-  transform: translateX(10px); /* keeps your 10px right nudge */
-  display: block;
-}
-
-/* LEFT quote: positioned relative to .hero */
-<div class="quote-left">
-  <p>The price of knowledge is the acceptance of truth, in whatever form it takes.</p>
-</div>
-}
-
-/* RIGHT quote: mirror of left */
-.quote-right {
-  position: absolute;
-  top: 18%;
-  right: 6%;
-  width: 28%;
-  font-size: 16px;
-  line-height: 1.4;
-  color: #222;
-  text-align: right;
-}
-
-/* Mobile: stack quotes under the hero and center them */
-@media (max-width: 800px) {
-  .quote-left, .quote-right {
-    position: static;
-    width: 90%;
-    margin: 1rem auto;
-    text-align: center;
-  }
-  /* Ellipse resize for mobile */
-  .ellipse { 
-    width: 80%; 
-    transform: translateX(0); 
-    margin-top: -30px; 
-}
-
+      text-align: center;
+      font-family: "Georgia", serif;
+      background-color: #fff;
+      color: #000;
     }
 
-<header class="hero">
-  <div class="logo-block">
-    <img src="assets/logo.png" alt="3 Pilgrim LLC logo" class="logo">
-    <img src="assets/ellipse.png" alt="decorative ellipse" class="ellipse">
-  </div>
+    /* ----------- HEADER AREA ----------- */
+    header {
+      margin-top: 50px;
+    }
 
-  <div class="quote-left">
-    <p>The price of knowledge is the acceptance of truth, in whatever form it takes.</p>
-  </div>
-
-  <div class="quote-right">
-    <p>The pursuit of knowledge requires the discovery of truth.</p>
-  </div>
-</header>
-    
     .logo {
       width: 125px;
       height: auto;
     }
 
     .ellipse {
-      display: block;
       width: 600px;
       height: auto;
-      margin-top: -65px;
-      margin-left: 10px; 
+      display: block;
+      margin: -60px auto 0 auto;   /* pulls ellipse closer to logo */
+      transform: translateX(10px); /* small right offset */
     }
 
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      margin: 0 50px;
-      text-decoration: none;
-      color: black;
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
- 
-    }
+    /* ----------- FOOTER ----------- */
     footer {
-  width: 70%;
-  margin: 180px auto 0 auto;
-  text-align: center;
-  font-size: 12px;
-  color: #555;
-  margin-top: 180px;
-  padding: 2px 0;
-  border-top: 1px solid #ccc;
-      box-shadow: 0 -1px 0 #ccc;
-  line-height: 1.5;
-}
+      width: 80%;
+      margin: 80px auto 0 auto;   /* keeps footer low and centered */
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+      padding: 4px 0 0 0;         /* minimal space between line and text */
+      border-top: 1px solid #ccc;
+      line-height: 1.5;
+    }
 
-footer a {
-  color: #333;
-  text-decoration: underline;
-}
+    footer a {
+      color: #333;
+      text-decoration: underline;
+    }
 
-footer a:hover {
-  color: #000;
-}
+    footer a:hover {
+      color: #000;
+    }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- ---------- HEADER ---------- -->
   <header>
-    <img src="assets/logo.png" alt="3 Pilgrim LLC logo" class="logo">
-    <br>
-    <img src="assets/ellipse.png" alt="decorative ellipse" class="ellipse">
+    <img src="assets/logo.png" alt="3 Pilgrim LLC Logo" class="logo">
+    <img src="assets/ellipse.png" alt="Decorative ellipse" class="ellipse">
   </header>
 
-  <nav>
-    <a href="about.html">About</a>
-    <a href="library.html">Library</a>
-    <a href="contact.html">Contact</a>
-    <a href="legal.html">Legal</a>
-  </nav>
-
+  <!-- ---------- FOOTER ---------- -->
   <footer>
-  <p>
-    All information contained on this site is the property of 3 Pilgrim LLC.  
-    All information is provided freely, and no warranty of accuracy is expressed or implied.  
-    We assume no responsibility for any injury or harm caused by direct or indirect use.  
-    All documents are working drafts and subject to revision at any time.  
-    Please reference our <a href="legal.html">Legal</a> page for full terms.
-  </p>
-</footer>
-  
+    <p>
+      All information contained on this site is the property of 3 Pilgrim LLC.<br>
+      All information is provided freely, and no warranty of accuracy is expressed or implied.<br>
+      We assume no responsibility for any injury or harm caused by direct or indirect use.<br>
+      All documents are working drafts and subject to revision at any time.<br>
+      Please reference our <a href="legal.html">Legal</a> page for full terms.
+    </p>
+  </footer>
 </body>
 </html>
