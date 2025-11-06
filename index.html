@@ -4,61 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3 Pilgrim LLC</title>
-  <style>
-    body {
-      font-family: "Georgia", serif;
-      background-color: #ffffff;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      margin-top: 2rem;
-    }
-    header img {
-      width: 180px;
-      height: auto;
-    }
-    .quotes {
-      display: flex;
-      justify-content: space-between;
-      margin: 1.5rem 8%;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #444;
-    }
-    nav {
-      margin: 1.5rem 0;
-    }
-    nav a {
-      margin: 0 1.5rem;
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    nav a:hover {
-      color: #666;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.75rem;
-      color: #777;
-      padding: 1rem 10%;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+.quotes {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 1rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #444;
+  min-height: 3rem;
+}
+.quote-left {
+  position: absolute;
+  left: 5%;
+  width: 35%;
+  text-align: left;
+}
+.quote-right {
+  position: absolute;
+  right: 5%;
+  width: 35%;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .quote-left, .quote-right {
+    position: static;
+    width: 90%;
+    margin: 0.5rem auto;
+    display: block;
+    text-align: center;
+  }
+}
+
 </head>
 <body>
   <header>
     <img src="assets/logo.png" alt="3 Pilgrim LLC Logo">
   </header>
 
-  <div class="quotes">
-    <div>“The price of knowledge is the acceptance of truth, in whatever form it takes.”</div>
-    <div>— 3 Pilgrim LLC</div>
-  </div>
+<div class="quotes">
+  <div class="quote-left">“The price of knowledge is the acceptance of truth, in whatever form it takes.”</div>
+  <div class="quote-right">“The pursuit of knowledge requires the discovery of truth.”</div>
+</div>
+
 
   <nav>
     <a href="about.html">About</a>
