@@ -50,11 +50,57 @@
   letter-spacing: 0.5px;
   transition: color 0.2s ease;
 }
+/* ----------- QUOTES ----------- */
+.quotes {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  margin: 40px auto 0 auto; /* adjust top margin to move closer/farther from ellipse */
+  font-family: "Georgia", serif;
+  font-size: 16px;
+  color: #000;
+}
+
+.quote-left, .quote-right {
+  width: 40%;   /* controls how wide each quote block is */
+  line-height: 1.4;
+}
+
+.quote-left {
+  text-align: left;
+}
+
+.quote-right {
+  text-align: right;
+}
+
+/* Mobile-friendly stacking */
+@media (max-width: 800px) {
+  .quotes {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+  }
+  .quote-left, .quote-right {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
 
 .main-nav a:hover {
   color: #444;
 }
-    
+    <div class="quotes">
+  <div class="quote-left">
+    <p>The price of knowledge is the acceptance of truth, in whatever form it takes.</p>
+  </div>
+  <div class="quote-right">
+    <p>The pursuit of knowledge requires the discovery of truth.</p>
+  </div>
+</div>
+
     /* ----------- FOOTER ----------- */
     footer {
       width: 80%;
