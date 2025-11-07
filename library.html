@@ -140,11 +140,7 @@
       background-color: #eee;
     }
     
-/* Smaller text in table body (Title, Category, Description) */
-#research-table tbody td {
-  font-size: 0.85rem; /* ~14px in Calibri */
-  line-height: 1.4;
-}
+
     /* -------- FOOTER -------- */
     footer {
       width: 80%;
@@ -165,7 +161,22 @@
     footer a:hover {
       color: #000;
     }
+    
+    /* Smaller font for library table */
+    .library-container table {
+      font-size: 14px;
+      line-height: 1.4;
+    }
 
+    .library-container td {
+      vertical-align: top;
+    }
+
+    /* Optionally make description column even smaller if needed */
+    .library-container td:nth-child(3) {
+      font-size: 13px;
+    }
+    
     /* -------- RESPONSIVE -------- */
     @media (max-width: 800px) {
       .quote-layer {
