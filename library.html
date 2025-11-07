@@ -172,9 +172,26 @@
       vertical-align: top;
     }
 
-    /* Optionally make description column even smaller if needed */
+    /* Slightly smaller font for description column */
     .library-container td:nth-child(3) {
       font-size: 13px;
+    }
+
+    /* Keep 'Read Online | PDF' links inline and smaller */
+    .library-container td:last-child {
+      font-size: 12.5px;       /* slightly smaller than rest */
+      white-space: nowrap;     /* prevents wrapping */
+    }
+
+    .library-container td:last-child a {
+      text-decoration: none;
+      color: #000;
+      margin: 0 2px;
+    }
+
+    .library-container td:last-child a:hover {
+      text-decoration: underline;
+      color: #444;
     }
     
     /* -------- RESPONSIVE -------- */
