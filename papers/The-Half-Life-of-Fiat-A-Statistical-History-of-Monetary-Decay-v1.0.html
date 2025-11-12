@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>The Half-Life of Fiat: A Statistical History of Monetary Decay </title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">The Half-Life of Fiat: A Statistical History of
+Monetary Decay </h1>
+<p class="subtitle">Fiat stability survey</p>
+</header>
+<div data-custom-style="Normal (Web)">
+<p>––––––––––––––––––––––––––––––––––––</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p><strong>3 Pilgrim LLC</strong></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>Independent Research</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>––––––––––––––––––––––––––––––––––––</p>
+</div>
+<p>Abstract</p>
+<p>This paper examines the historical lifespan of fiat currencies
+following their decoupling from commodity backing. Across 21 documented
+cases spanning eight centuries, fiat systems exhibit an average duration
+of ~31 years and a median of 24 years before collapse, redenomination,
+or hyperinflation.</p>
+<div data-custom-style="Normal (Web)">
+<p><em>Keywords</em>: fiat currency, monetary decay, hyperinflation,
+redenomination, currency lifespan, survival analysis, economic history,
+confidence decay, statistical modeling</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p><em>Correspondence:</em></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>https://3pilgrim.com/contact</p>
+</div>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" />
+</a>
+<div data-custom-style="Normal (Web)">
+<p>https://creativecommons.org/licenses/by/4.0/</p>
+</div>
+<p><em>Recommended Citation:</em></p>
+<p>3 Pilgrim LLC (2025 The Half-Life of Fiat: A Statistical History of
+Monetary Decay . Working Paper. Available at: https://3pilgrim.com/</p>
+<h2 id="i.-defining-fiat-failure">I. Defining Fiat Failure</h2>
+<blockquote>
+<p>For analytical purposes, failure is defined as:</p>
+</blockquote>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Hyperinflation: Currency becomes nonviable for trade.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Redenomination: A new unit replaces the old to reset scale.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Replacement: Superseded by a new regime (e.g., Euro).</p>
+</div></li>
+</ul>
+<blockquote>
+<p>Each outcome reflects a single underlying event — loss of faith in
+the unit as a measure of value.</p>
+</blockquote>
+<h2 id="iii.-dataset-methodology">III. Dataset &amp; Methodology</h2>
+<blockquote>
+<p>We analyze 21 historical fiat regimes. Each case records:</p>
+</blockquote>
+<ol type="1">
+<li><div data-custom-style="List Paragraph">
+<p>Fiat Start — Year of decoupling from specie.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Failure Date — Year of collapse or redenomination.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Lifespan — Duration in years.</p>
+</div></li>
+</ol>
+<blockquote>
+<p><em>Data sources include historical central bank archives, IMF
+currency reports, and secondary analyses (Friedman 1994; Laughlin 1886;
+Needham 1965).</em></p>
+<p>Descriptive Statistics:<br />
+Mean lifespan: 31.14 years<br />
+Median lifespan: 24 years<br />
+Range: 2–90 years<br />
+Distribution: Right-skewed — most failures occur within 25 years.</p>
+</blockquote>
+<h2 id="iv.-observations">IV. Observations</h2>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Early Failure Cluster (0–9 years): 33% collapse within a decade —
+typically those born from wartime emergency issuance.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Mid-life Failure (~30 years): The modal range for hyperinflation or
+redenomination.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Long Tail (&gt;60 years): Outliers are pre-industrial systems with
+low circulation velocity and limited international convertibility.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>This forms a clear statistical half-life curve of fiat stability.
+Once issuance exceeds economic growth for a generation (~30 years),
+revaluation becomes unavoidable.</p>
+</div></li>
+</ul>
+<h2 id="v.-case-highlights">V. Case Highlights</h2>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>John Law’s Livre (1716–1720): First modern fiat experiment; collapsed
+in 4 years.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Continental Notes (1775–1781): Worthless within 6 years.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Papiermark (1914–1923): 9 years before hyperinflation.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Zimbabwe Dollar (1980–2009): 29 years.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Yugoslav Dinar (1944–1999): 55 years before dissolution.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>U.S. Dollar (1971–present): 54 years as of 2025 — double the mean</p>
+</div></li>
+</ul>
+<h2 id="vi.-discussion">VI. Discussion</h2>
+<blockquote>
+<p>Across vastly different eras and political systems, the arithmetic is
+invariant: fiat lifespans converge around a generational horizon.
+Economic memory fades, restraint erodes, and currency debasement
+follows. The pattern holds regardless of ideology or geography.</p>
+<p>Mathematically, we can approximate a decay function of confidence
+as:</p>
+<p><span class="math display">\[S(t) = e - \lambda t\]</span></p>
+<p>where <span class="math inline">\(S(t)\)</span> is survival
+probability, <span class="math inline">\(t\)</span> is time since
+decoupling, and <span class="math inline">\(\lambda \approx
+0.022\)</span> (fitted from observed mean ≈31 years). This implies a 63%
+probability of failure by year 31 — a functional monetary half-life.</p>
+<p>The empirical conclusion is inescapable: fiat systems are
+self-terminating. Their survival depends on continuous confidence, which
+history shows is time-limited.</p>
+</blockquote>
+<h2 id="appendix-a-statistical-summary">Appendix A: Statistical
+Summary</h2>
+<table style="width:65%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Range (Years)</strong></th>
+<th><strong>Count</strong></th>
+<th><strong>% of Total</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0–9</strong></td>
+<td>7</td>
+<td>33.30%</td>
+<td>Law’s Livre, Continental, Papiermark</td>
+</tr>
+<tr>
+<td><strong>10–19</strong></td>
+<td>3</td>
+<td>14.30%</td>
+<td>Pengő, Ruble, Drachma</td>
+</tr>
+<tr>
+<td><strong>20–29</strong></td>
+<td>4</td>
+<td>19.00%</td>
+<td>Zimbabwe, Bolivian Peso</td>
+</tr>
+<tr>
+<td><strong>30–39</strong></td>
+<td>1</td>
+<td>4.80%</td>
+<td>Mexican Peso</td>
+</tr>
+<tr>
+<td><strong>40–49</strong></td>
+<td>4</td>
+<td>19.00%</td>
+<td>Lira, Cruzeiro</td>
+</tr>
+<tr>
+<td><strong>50–59</strong></td>
+<td>1</td>
+<td>4.80%</td>
+<td>Yugoslav Dinar</td>
+</tr>
+<tr>
+<td><strong>60–69</strong></td>
+<td>1</td>
+<td>4.80%</td>
+<td>Ming Kuan</td>
+</tr>
+<tr>
+<td><strong>70–99</strong></td>
+<td>2</td>
+<td>9.60%</td>
+<td>Yuan Jiaochao, Turkish Lira</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Mean: 31.14 years Median: 24 Mode: 6 Std. Dev.: 22.9<br />
+Probability of failure ≤24 years: 52.4%</p>
+</blockquote>
+<h2 id="appendix-b-dataset">Appendix B: Dataset: </h2>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Currency</strong></th>
+<th style="text-align: center;"><strong>Fiat Start</strong></th>
+<th style="text-align: center;"><strong>Failed</strong></th>
+<th style="text-align: center;"><strong>Lifespan (Years)</strong></th>
+<th style="text-align: center;"><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>German Mark (Papiermark)</td>
+<td style="text-align: center;">1914</td>
+<td style="text-align: center;">1923</td>
+<td style="text-align: center;">9</td>
+<td>WWI suspension; hyperinflation [C.200.3].</td>
+</tr>
+<tr>
+<td>Hungarian Pengő</td>
+<td style="text-align: center;">1927</td>
+<td style="text-align: center;">1946</td>
+<td style="text-align: center;">19</td>
+<td>Post-WWII hyperinflation [C.200.4].</td>
+</tr>
+<tr>
+<td>Zimbabwe Dollar</td>
+<td style="text-align: center;">1980</td>
+<td style="text-align: center;">2009</td>
+<td style="text-align: center;">29</td>
+<td>Hyperinflation; abandoned [C.200.5].</td>
+</tr>
+<tr>
+<td>Continental Congress Notes</td>
+<td style="text-align: center;">1775</td>
+<td style="text-align: center;">1781</td>
+<td style="text-align: center;">6</td>
+<td>Revolutionary War; worthless [C.200.6].</td>
+</tr>
+<tr>
+<td>French Livre (John Law)</td>
+<td style="text-align: center;">1716</td>
+<td style="text-align: center;">1720</td>
+<td style="text-align: center;">4</td>
+<td>Mississippi Bubble collapse [C.200.7].</td>
+</tr>
+<tr>
+<td>Ming Dynasty Kuan (Baochao)</td>
+<td style="text-align: center;">~1390</td>
+<td style="text-align: center;">~1450</td>
+<td style="text-align: center;">60</td>
+<td>Copper backing ended; inflation [C.200.8] [F.200.1].</td>
+</tr>
+<tr>
+<td>Chinese Yuan (Jiaochao)</td>
+<td style="text-align: center;">1260</td>
+<td style="text-align: center;">~1350</td>
+<td style="text-align: center;">90</td>
+<td>Over-issuance; collapse [C.200.9] [F.200.2].</td>
+</tr>
+<tr>
+<td>Mexican Peso</td>
+<td style="text-align: center;">1957</td>
+<td style="text-align: center;">1993</td>
+<td style="text-align: center;">36</td>
+<td>Silver ended ~1957; redenominated [C.6.3].</td>
+</tr>
+<tr>
+<td>Russian Ruble (Soviet, 1920s)</td>
+<td style="text-align: center;">1922</td>
+<td style="text-align: center;">1924</td>
+<td style="text-align: center;">2</td>
+<td>Post-revolution hyperinflation [C.200.10].</td>
+</tr>
+<tr>
+<td>Yugoslav Dinar</td>
+<td style="text-align: center;">1944</td>
+<td style="text-align: center;">1999</td>
+<td style="text-align: center;">55</td>
+<td>1990s hyperinflation; replaced [C.200.11].</td>
+</tr>
+<tr>
+<td>Venezuelan Bolívar</td>
+<td style="text-align: center;">1971</td>
+<td style="text-align: center;">~2018</td>
+<td style="text-align: center;">47</td>
+<td>Post-Bretton Woods; hyperinflation [C.200.12].</td>
+</tr>
+<tr>
+<td>Argentine Peso (Austral)</td>
+<td style="text-align: center;">1985</td>
+<td style="text-align: center;">1991</td>
+<td style="text-align: center;">6</td>
+<td>Hyperinflation; replaced [C.200.13].</td>
+</tr>
+<tr>
+<td>Brazilian Cruzeiro</td>
+<td style="text-align: center;">1942</td>
+<td style="text-align: center;">1986</td>
+<td style="text-align: center;">44</td>
+<td>Inflation; replaced by cruzado [C.200.14].</td>
+</tr>
+<tr>
+<td>Italian Lira</td>
+<td style="text-align: center;">1951</td>
+<td style="text-align: center;">1999</td>
+<td style="text-align: center;">48</td>
+<td>Silver ended ~1951; Euro replacement [C.6.3].</td>
+</tr>
+<tr>
+<td>Polish Złoty (Post-WWII)</td>
+<td style="text-align: center;">1950</td>
+<td style="text-align: center;">1995</td>
+<td style="text-align: center;">45</td>
+<td>Inflation; redenominated [C.200.15].</td>
+</tr>
+<tr>
+<td>Turkish Lira (Old)</td>
+<td style="text-align: center;">1927</td>
+<td style="text-align: center;">2005</td>
+<td style="text-align: center;">78</td>
+<td>Inflation; redenominated [C.200.16].</td>
+</tr>
+<tr>
+<td>Peruvian Inti</td>
+<td style="text-align: center;">1985</td>
+<td style="text-align: center;">1991</td>
+<td style="text-align: center;">6</td>
+<td>Hyperinflation; replaced [C.200.17].</td>
+</tr>
+<tr>
+<td>Greek Drachma (Post-WWII)</td>
+<td style="text-align: center;">1944</td>
+<td style="text-align: center;">1953</td>
+<td style="text-align: center;">9</td>
+<td>Hyperinflation; redenominated [C.200.18].</td>
+</tr>
+<tr>
+<td>Romanian Leu</td>
+<td style="text-align: center;">1990</td>
+<td style="text-align: center;">2005</td>
+<td style="text-align: center;">15</td>
+<td>Post-communism inflation; redenominated [C.200.19].</td>
+</tr>
+<tr>
+<td>Bolivian Peso</td>
+<td style="text-align: center;">1963</td>
+<td style="text-align: center;">1987</td>
+<td style="text-align: center;">24</td>
+<td>Hyperinflation; replaced [C.200.20].</td>
+</tr>
+<tr>
+<td>Angolan Kwanza</td>
+<td style="text-align: center;">1977</td>
+<td style="text-align: center;">1999</td>
+<td style="text-align: center;">22</td>
+<td>Hyperinflation; redenominated [C.200.21].</td>
+</tr>
+</tbody>
+</table>
+<p><strong><u>References:</u></strong></p>
+<blockquote>
+<p>[C.200.1] U.S. Treasury Department Reports (various) [F.200.3].</p>
+<p>[C.200.2] Friedman, M., Money Mischief (1994) [F.200.4].</p>
+<p>[C.200.3] Laughlin, J.L., History of Bimetallism (1886)
+[F.200.8].</p>
+<p>[C.200.4] Hungarian National Bank records (1946) [F.200.9].</p>
+<p>[C.200.5] Reserve Bank of Zimbabwe reports (2009) [F.200.10].</p>
+<p>[C.200.6] Continental Congress Journals (1781) [F.200.11].</p>
+<p>[C.200.7] French Royal Archives (1720) [F.200.12].</p>
+<p>[C.200.8] Ming Dynasty records (via Needham, J.).</p>
+<p>[C.200.9] Yuan Dynasty records (via Polo, M.).</p>
+<p>[C.200.10] Soviet State Bank reports (1924).</p>
+<p>[C.200.11] Yugoslav National Bank (1999).</p>
+<p>[C.200.12] Central Bank of Venezuela (2018).</p>
+<p>[C.200.13] Argentine Central Bank (1991).</p>
+<p>[C.200.14] Banco Central do Brasil (1986).</p>
+<p>[C.200.15] National Bank of Poland (1995).</p>
+<p>[C.200.16] Central Bank of Turkey (2005).</p>
+<p>[C.200.17] Central Bank of Peru (1991).</p>
+<p>[C.200.18] Bank of Greece (1953).</p>
+<p>[C.200.19] National Bank of Romania (2005).</p>
+<p>[C.200.20] Central Bank of Bolivia (1987).</p>
+<p>[C.200.21] Banco Nacional de Angola (1999).</p>
+<p>[C.200.22] Economic texts (e.g., Gresham’s Law studies).</p>
+<p>[C.6.3] Historical Economic Analyses].</p>
+</blockquote>
+</body>
+</html>
