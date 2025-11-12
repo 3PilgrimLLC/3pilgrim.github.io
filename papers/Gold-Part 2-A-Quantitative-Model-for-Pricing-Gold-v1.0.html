@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Gold Part 2: A Quantitative Model for Pricing Gold</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Gold Part 2: A Quantitative Model for Pricing
+Gold</h1>
+<p class="subtitle">Calibrating Fiat and Labor in Monetary Systems</p>
+</header>
+<div data-custom-style="Normal (Web)">
+<p>––––––––––––––––––––––––––––––––––––</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p><strong>3 Pilgrim LLC</strong></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>Independent Research</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>––––––––––––––––––––––––––––––––––––</p>
+</div>
+<p>Abstract</p>
+<p>Gold is not a store of value. It is the unit that defines value.</p>
+<p>The error of modern finance lies in treating gold as a speculative
+asset rather than a metrological constant. In an age of fiat
+abstraction, we have mistaken movement of the ruler for movement of the
+world. This paper proposes a simple, empirically grounded method to
+re-anchor value measurement to an invariant: gold as the dimensional
+meter of monetary systems, labor as its base unit, and fiat as a
+derivative expression of both.</p>
+<p>By re-establishing the relationship between labor, output, and gold
+supply, we recover a fixed reference frame for valuation — a calibration
+system for an unmoored economy.</p>
+<div data-custom-style="Normal (Web)">
+<p><em>Keywords</em>: gold valuation, fiat calibration, monetary
+invariance, labor economics, GDP-gold ratio, monetary base, metrological
+constant, economic measurement, productivity alignment</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p><em>Correspondence:</em></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>https://3pilgrim.com/contact</p>
+</div>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" />
+</a>
+<div data-custom-style="Normal (Web)">
+<p>https://creativecommons.org/licenses/by/4.0/</p>
+</div>
+<p><em>Recommended Citation:</em></p>
+<p>3 Pilgrim LLC (2025). Gold Part 2: A Quantitative Model for Pricing
+Gold. Working Paper. Available at: https://3pilgrim.com/</p>
+<h1 id="i.-definition-and-ontology-of-gold">I. Definition and Ontology
+of Gold</h1>
+<blockquote>
+<p>Gold (chemical symbol Au, atomic number 79) is a dense, malleable,
+nonreactive element whose physical invariance makes it unique among
+naturally occurring substances. It neither oxidizes nor decays, and its
+supply grows at a rate slow enough to mirror human productivity. Its
+rarity is neither excessive nor trivial, and its divisibility enables
+both physical and abstract exchange. These are not incidental properties
+— they are the foundation of its monetary role.</p>
+<p>The word troy derives from Troyes, the medieval French trade fair
+that became a center for standardizing weights among European merchants.
+The “troy ounce,” defined as 31.1034768 grams, predates the metric
+system by centuries and persists as the global standard for precious
+metals. Its endurance is a living artifact of monetary history — a
+reminder that money is not defined by governments, but by consensus on
+measurement.</p>
+<p>To contrast: the SI (metric) gram is defined physically through
+atomic constants, while the troy system is defined historically through
+exchange. The two intersect in a single point — gold — where matter and
+convention meet.</p>
+</blockquote>
+<h1 id="ii.-the-evolution-of-gold-as-a-standard">II. The Evolution of
+Gold as a Standard</h1>
+<blockquote>
+<p>Gold first emerged as a medium of exchange not because it was shiny
+or rare, but because it was stable. Its metallurgical properties made it
+impossible to counterfeit convincingly, while its relative scarcity and
+universal desirability allowed it to bridge cultural and geographic
+boundaries.</p>
+<p>Over time, gold took on three simultaneous roles:</p>
+</blockquote>
+<ol type="1">
+<li><div data-custom-style="List Paragraph">
+<p><em>Commodity</em>: extracted, refined, and traded like any
+resource.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><em>Money:</em> minted and certified into standardized units by state
+or guild authority.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><em>Currency</em>: an abstracted claim upon gold, represented by
+inscription or paper.</p>
+</div></li>
+</ol>
+<blockquote>
+<p>These layers — commodity, money, currency — formed a coherent system
+so long as the ratios between them remained stable. When governments
+maintained honest convertibility, the system behaved as a closed
+feedback loop: labor produced goods, goods were exchanged for money, and
+money was redeemable for its invariant base.</p>
+<p>The 20th century broke that loop. Gold ceased to circulate as
+currency, retreating to vaults while paper proxies expanded in its name.
+Yet the invisible denominator remained. Even now, the global system
+functions on a de facto gold standard — not by law, but by necessity.
+Central banks still measure their solvency in tonnes, not digits. Gold
+never left the system; it was only hidden.</p>
+</blockquote>
+<h1 id="iii.-labor-as-the-base-unit-of-value">III. Labor as the Base
+Unit of Value</h1>
+<blockquote>
+<p>All value originates from transformation — the conversion of
+potential into utility through human effort. This transformation, when
+generalized, is labor. It is the dimensional root unit of economics.
+Every product, service, or innovation can ultimately be decomposed into
+labor applied over time to physical matter.</p>
+<p>Gold’s singular importance arises from its alignment with this
+process. Its extraction cost, energy expenditure, and incremental output
+rate have, over centuries, co-evolved with human productivity. Gold’s
+annual production averages 1.5–2%, almost identical to long-run global
+productivity growth. It is as if the Earth itself keeps time with
+civilization.</p>
+<p>Thus, gold functions not as a speculative object, but as a naturally
+regulated index of collective human output. Labor defines what value is,
+and gold defines how value is measured. The two are coupled — the ruler
+and the hand that holds it.</p>
+</blockquote>
+<h1 id="iv.-constructing-a-synthetic-valuation-framework">IV.
+Constructing a Synthetic Valuation Framework</h1>
+<blockquote>
+<p>To determine whether gold is “cheap” or “expensive,” we must reverse
+the modern assumption. The correct question is not “what is gold worth?”
+but “how far has fiat drifted from equilibrium?”</p>
+<p>We can express this using three interlocking ratios:</p>
+</blockquote>
+<h2 id="gdpgold-ratio"><strong>1. GDP–Gold Ratio</strong></h2>
+<p><span class="math display">\[P_{gold} =
+\frac{GDP_{real}}{G_{stock}}\]</span></p>
+<blockquote>
+<p>Here, <span class="math inline">\(GDP_{real}\)</span> represents
+total world economic output (adjusted for inflation), and <span
+class="math inline">\(G_{stock}\)</span> stock​ the total above-ground
+gold supply. The ratio measures total productive output per unit of
+invariant mass.</p>
+</blockquote>
+<h2 id="laborgold-ratio"><strong>2. Labor–Gold Ratio</strong></h2>
+<p><span class="math display">\[P_{gold} = W_{avg} \times
+\frac{H_{avg}}{G_{oz}}\]</span></p>
+<blockquote>
+<p>Where <span class="math inline">\(W_{avg}\)</span> ​ is average hourly
+wage, and <span class="math inline">\(H_{avg}\)</span>​ the mean labor
+hours per capita. This expresses gold value directly in labor terms —
+hours per ounce. Historical U.S. data shows remarkable stability here:
+since 1900, the labor-hour cost of an ounce of gold has oscillated
+within a narrow band (~25–35 hours/oz) despite radical shifts in
+technology, productivity, and fiat regimes.</p>
+<p><img src="media/image2.png"
+style="width:4.78513in;height:2.93238in" /></p>
+</blockquote>
+<h2 id="monetary-basegold-ratio"><strong>3. Monetary Base–Gold
+Ratio</strong></h2>
+<blockquote>
+<p><span class="math inline">\(P_{gold} = M_{1}/G_{stock}\)</span>​​</p>
+<p>This defines the implied gold value based on the size of the liquid
+money supply. Historically, the 1870–1913 gold standard period
+maintained coherence between this and the prior two ratios — a state of
+dimensional consistency.</p>
+<p><img src="media/image3.png"
+style="width:6.5in;height:2.76319in" /></p>
+<p>When plotted over time, all three converge toward a long-term
+equilibrium between 8:1 and 10:1 in GDP:Gold terms. Today, the observed
+ratio sits near 5.3:1, implying an overvaluation of ~30–40% relative to
+historical equilibrium.</p>
+</blockquote>
+<h1 id="v.-interpretation-and-dynamics">V. Interpretation and
+Dynamics</h1>
+<blockquote>
+<p>Gold’s price volatility is an illusion — it is fiat’s instability
+reflected in a fixed mirror. When currency expands faster than
+productivity, nominal gold rises. When austerity or liquidity
+contraction occurs, it “falls.” But gold itself does not move. The
+reference plane is constant.</p>
+<p>Following World War II, the U.S. dollar assumed the role of global
+clearinghouse. Because the war left American industry intact, over 70%
+of the world’s monetary gold flowed into U.S. reserves. To prevent
+collapse of external trade, the Bretton Woods system formalized the
+dollar as a proxy for gold at $35/oz — a policy peg, not a physical one.
+As postwar reconstruction normalized, gold’s natural equilibrium
+reasserted itself. Once the U.S. began running trade deficits in the
+late 1960s, the peg could not hold: maintaining it would have required
+deflating domestic wages to match global rebalancing — a political
+impossibility. Nixon’s suspension of convertibility in 1971 was not an
+act of innovation, but of necessity.</p>
+<p>Since then, fiat has floated unanchored, yet the gravitational pull
+of gold remains. Central banks still accumulate it, and private markets
+still measure crisis by its rise. As of 2025, central banks are net
+buyers, creating a temporary demand distortion that pushes gold above
+equilibrium (~$3,000/oz). Adjusted for monetary base and global
+productivity, a fair equilibrium lies closer to $2,000–$2,200/oz.</p>
+<p>This is not speculation — it is calibration. Gold’s “value” is simply
+the point where fiat drift crosses zero.</p>
+</blockquote>
+<h1 id="vi.-empirical-stability">VI. Empirical Stability</h1>
+<blockquote>
+<p>Gold’s stability is extraordinary. Across 5,000 years, no other
+substance has maintained such consistent proportionality to human labor
+and output. Its extraction cost, market supply, and social utility
+evolve in synchrony with civilization itself. The correlation is not
+perfect — but it is the closest thing economics has to a physical
+law.</p>
+<p>Empirically:</p>
+</blockquote>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Global gold production expands at ~1.7% annually.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Global productivity grows at ~1.6% annually.</p>
+</div></li>
+</ul>
+<blockquote>
+<p>The ratio of total economic output to gold stock remains within a
+single order of magnitude across centuries.</p>
+<p>Unlike commodities, gold is not consumed. Its stock accumulates,
+making it a time-integrated record of civilization’s total economic
+memory. This property — persistent, cumulative, incorruptible — is why
+it serves as the only known natural invariant in economics.</p>
+</blockquote>
+<h1 id="vii.-implications-for-fiat-systems">VII. Implications for Fiat
+Systems</h1>
+<blockquote>
+<p>If gold defines the unit of measure, fiat defines the derivative
+expression. Fiat functions correctly only when tethered — synthetically
+or physically — to an invariant referent. Without it, the ruler expands
+and contracts with each policy whim, introducing compounding calibration
+error into every transaction, contract, and market signal.</p>
+<p>The resulting error manifests as inflation, mispricing of risk, and
+distortion of productive incentives. It is not moral failure; it is a
+metrological one. Fiat is not “bad” — it is simply uncalibrated.</p>
+<p>Re-linking fiat to gold does not require metallic redemption, merely
+consistent dimensional mapping: measuring systemic drift through ratios
+like those above and adjusting supply expansion to maintain coherence.
+When the ruler’s length matches the world again, economics becomes
+predictive rather than interpretive.</p>
+</blockquote>
+<h1 id="viii.-conclusion"><span data-custom-style="Strong">VIII.
+Conclusion</span></h1>
+<blockquote>
+<p>Gold is not a store of value. It is the ruler by which value is
+stored.<br />
+Fiat’s instability is not a mystery — it is measurement drift.</p>
+<p>In the hierarchy of monetary physics:</p>
+</blockquote>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Labor is the energy of value.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Gold is the invariant measure.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Fiat is the abstract instrument of exchange.</p>
+</div></li>
+</ul>
+<blockquote>
+<p>When the measure loses calibration, the system decays into noise.
+When it is restored, clarity returns.</p>
+<p>Gold does not move. It reveals motion.</p>
+</blockquote>
+</body>
+</html>
