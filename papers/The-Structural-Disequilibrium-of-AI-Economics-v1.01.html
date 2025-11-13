@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>The-Structural-Disequilibrium-of-AI-Economics-v1.0</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="the-structural-disequilibrium-of-ai-economics"><span
+data-custom-style="Title Char">The Structural Disequilibrium of AI
+Economics</span></h1>
+<div data-custom-style="Subtitle">
+<p><span data-custom-style="Emphasis">The Consolidation Phase</span></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>––––––––––––––––––––––––––––––––––––</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p><strong>3 Pilgrim LLC</strong></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>Independent Research</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>––––––––––––––––––––––––––––––––––––</p>
+</div>
+<p>Abstract</p>
+<p>Artificial intelligence economics is entering a structural inflection
+point. Current architectures integrate two incompatible regimes: a
+capital-intensive training model and a low-margin inference model. This
+vertical integration creates reflexive instability—training demands
+hyperscale investment while inference cannot amortize those costs under
+intermittent, low-utilization workloads. Physical constraints compound
+the imbalance: datacenters operate near steady-state power draw even
+when GPUs idle, converting capital into heat rather than productive
+work. The result is negative-return scaling: larger clusters yield
+diminishing economic efficiency despite rising energy and depreciation
+costs. This paper argues that equilibrium requires bifurcation—training
+infrastructure will consolidate into utility-like providers, while
+inference matures into a service economy optimized for throughput and
+latency. The consolidation phase will mark normalization, not decline: a
+shift from narrative-driven expansion to rational pricing and structural
+specialization.</p>
+<p><em>Keywords</em>: AI Economics, Structural Disequilibrium, Training
+vs Inference, Capital Intensity, Utilization Efficiency, Negative-Return
+Scaling, Reflexivity, FOMO Economics, Bifurcation, Compute Economics,
+Energy Elasticity, AI Infrastructure, Consolidation Phase, Economic
+Equilibrium, Marginal Productivity</p>
+<div data-custom-style="Normal (Web)">
+<p><em>Correspondence:</em></p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p>https://3pilgrim.com/contact</p>
+</div>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+  <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" />
+</a>
+<div data-custom-style="Normal (Web)">
+<p>https://creativecommons.org/licenses/by/4.0/</p>
+</div>
+<p><em>Recommended Citation:</em></p>
+<p>3 Pilgrim LLC (2025). The Structural Disequilibrium of AI Economics.
+Working Paper. Available at: https://3pilgrim.com/</p>
+<p><span data-custom-style="Strong">NOTICE:</span><br />
+This work is intended for conceptual and educational purposes only. All
+examples are illustrative and based on publicly available data or
+stylized assumptions. No statements herein should be interpreted as
+predictions or financial advice regarding any specific company or
+entity. This document may contain errors or inaccuracies; readers should
+verify all information independently.</p>
+<hr />
+<h1 id="introduction-the-end-of-indefinite-scaling">Introduction — The
+End of Indefinite Scaling</h1>
+<blockquote>
+<p>For more than a decade, the organizing principle of
+artificial-intelligence research has been simple: larger models perform
+better. The empirical “scaling laws” identified by Kaplan et al. (2020)
+provided a quantitative basis for that intuition, linking model loss
+inversely to total compute through a power-law relation. This logic—more
+data, more parameters, more GPUs—became the guiding strategy for both
+research and investment.</p>
+<p>But scaling cannot proceed indefinitely. Physical constraints at the
+transistor, thermal, and synchronization levels now cap feasible cluster
+sizes; economic constraints cap the willingness to finance them. The
+theoretical frontier has flattened into a practical ceiling. What
+remains is not a race toward new discovery but a process of
+rationalization: the search for balance between cost, capacity, and
+sustained economic return.</p>
+<p>This paper begins from that inflection point. It treats the AI sector
+not as a mystery of emergent intelligence but as an industrial system
+subject to the same cyclical laws that have governed every prior
+technology boom.</p>
+</blockquote>
+<h1 id="the-dual-economies-of-ai">The Dual Economies of AI</h1>
+<blockquote>
+<p>Modern AI operates through two fundamentally different economic
+logics.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th><blockquote>
+<p><strong>Dimension</strong></p>
+</blockquote></th>
+<th><blockquote>
+<p><strong>Training Regime</strong></p>
+</blockquote></th>
+<th><blockquote>
+<p><strong>Inference Regime</strong></p>
+</blockquote></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><blockquote>
+<p><strong>Economic Type</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Capital-intensive R&amp;D</p>
+</blockquote></td>
+<td><blockquote>
+<p>Demand-driven service</p>
+</blockquote></td>
+</tr>
+<tr>
+<td><blockquote>
+<p><strong>Cost Behavior</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>High fixed, low variable</p>
+</blockquote></td>
+<td><blockquote>
+<p>Low fixed, high variable</p>
+</blockquote></td>
+</tr>
+<tr>
+<td><blockquote>
+<p><strong>Revenue Source</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Internal investment or compute resale</p>
+</blockquote></td>
+<td><blockquote>
+<p>End-user consumption (APIs, subscriptions)</p>
+</blockquote></td>
+</tr>
+<tr>
+<td><blockquote>
+<p><strong>Frequency / Scale</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Infrequent, project-based</p>
+</blockquote></td>
+<td><blockquote>
+<p>Continuous, mass-market</p>
+</blockquote></td>
+</tr>
+<tr>
+<td><blockquote>
+<p><strong>Business Analogy</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Semiconductor fabrication</p>
+</blockquote></td>
+<td><blockquote>
+<p>Cloud or SaaS distribution</p>
+</blockquote></td>
+</tr>
+<tr>
+<td><blockquote>
+<p><strong>Optimization Goal</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Minimize model loss</p>
+</blockquote></td>
+<td><blockquote>
+<p>Maximize throughput per watt / dollar</p>
+</blockquote></td>
+</tr>
+<tr>
+<td><blockquote>
+<p><strong>Efficient Market Form</strong></p>
+</blockquote></td>
+<td><blockquote>
+<p>Few firms, high barriers</p>
+</blockquote></td>
+<td><blockquote>
+<p>Many firms, price competition</p>
+</blockquote></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The two regimes are orthogonal. Training behaves like a
+heavy-industry process—few customers, high sunk cost, long depreciation
+cycles. Inference behaves like a consumer service—many customers,
+elastic demand, thin margins. Integrating them under one balance sheet
+creates structural tension: the capital allocation and risk profile
+appropriate to training are incompatible with the throughput and pricing
+dynamics of inference.</p>
+</blockquote>
+<h1 id="the-physics-of-idle-capital">The Physics of Idle Capital</h1>
+<blockquote>
+<p>Empirically, this tension manifests as persistent under-utilization.
+Once a model is trained, the computational load required for inference
+drops by roughly an order of magnitude. Public data from hyperscale
+deployments suggest sustained utilization between 5 and 15 percent of
+installed GPU capacity during inference periods. The remaining hardware,
+along with its cooling and power infrastructure, remains energized but
+idle.</p>
+<p>This phenomenon is not a transient inefficiency; it is a physical
+consequence of the asymmetry between burst-like training cycles and
+intermittent inference demand. Power and thermal systems at this scale
+are engineered for stability, not elasticity. Variable cooling, staged
+power delivery, and selective shutdown are economically and mechanically
+prohibitive. The datacenter therefore operates near steady-state draw
+regardless of computational load, converting capital investment into
+heat rather than productive work.</p>
+<p>The result is idle capital: billions of dollars in depreciating
+equipment consuming energy without proportional output. In macroeconomic
+terms, the industry has created a stock of fixed assets whose marginal
+productivity is declining even as total investment accelerates—a
+classical symptom of structural oversupply.</p>
+</blockquote>
+<h1 id="the-inevitability-of-bifurcation">The Inevitability of
+Bifurcation</h1>
+<blockquote>
+<p>The resolution to structural oversupply is specialization. History
+provides precedent: the semiconductor industry of the 1980s faced the
+same disequilibrium. Integrated device manufacturers combined design and
+fabrication under one roof; costs ballooned; margins collapsed.
+Equilibrium was restored only when the market bifurcated—design firms
+went fabless, and dedicated foundries (TSMC, UMC) absorbed the capital
+burden as independent suppliers.</p>
+<p>The same logic applies to artificial intelligence.</p>
+<p>Proposition 1.<br />
+When two orthogonal economic regimes—a high-fixed-cost, low-frequency
+training regime and a low-margin, high-frequency inference regime—are
+vertically integrated, the composite system becomes reflexively
+unstable. Equilibrium is restored only through separation into distinct
+functional markets.</p>
+<p>Training infrastructure behaves like semiconductor fabrication:
+capital-intensive, cyclical, and technology-driven. Inference behaves
+like software or consumer electronics: demand-driven, commoditized, and
+margin-sensitive. Forcing both onto a single corporate balance sheet
+obliges investors to fund two incompatible cost functions.</p>
+<p>Bifurcation transforms this conflict into efficiency:</p>
+</blockquote>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Training entities focus on process yield, depreciation, and
+throughput—selling compute capacity to any model vendor, regardless of
+brand.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Inference entities purchase that capacity as an operating expense,
+optimizing user experience, latency, and application value rather than
+hardware scale.</p>
+</div></li>
+</ul>
+<blockquote>
+<p>In this arrangement, specialization replaces reflexivity. Capacity is
+priced by utility, not by expectation.</p>
+</blockquote>
+<h1 id="reflexivity-and-the-fomo-incentive">Reflexivity and the FOMO
+Incentive</h1>
+<blockquote>
+<p>The persistence of disequilibrium is not irrational; it is
+reflexive.<br />
+In the present structure, each new expansion raises corporate valuation,
+which in turn justifies further expansion. Capital begets scale; scale
+begets narrative; narrative begets capital. The system sustains itself
+through FOMO economics—the fear of missing the next discovery.</p>
+<p>Cross-subsidization by trillion-dollar conglomerates further masks
+inefficiency. Losses incurred by AI divisions are offset by profits
+elsewhere, permitting continued growth despite declining marginal
+productivity. The market interprets this persistence as validation
+rather than distortion.</p>
+<p>This dynamic is self-reinforcing until an external
+constraint—economic, physical, or regulatory—interrupts it. At that
+point, the cycle resolves not through collapse but through
+specialization: the emergence of independent training utilities and
+cost-efficient inference providers. Every prior technology boom has
+ended this way—from mainframes to semiconductors to cloud computing.</p>
+</blockquote>
+<hr />
+<h1 id="toward-the-consolidation-phase">Toward the Consolidation
+Phase</h1>
+<blockquote>
+<p>The disequilibrium described here marks the close of AI’s
+expansionary era. The sector’s next frontier is not scale but
+equilibrium. The economics of artificial intelligence are converging
+toward the same structural resolution that every capital-intensive
+industry eventually reaches: consolidation, specialization, and rational
+pricing.</p>
+<p>Training and inference will separate. The former will stabilize as a
+utility industry governed by throughput and depreciation; the latter
+will mature into a service economy governed by efficiency and
+differentiation. The transition will not signal decline—it will mark
+normalization.</p>
+<p>The frontier of artificial intelligence has moved.<br />
+It no longer lies in building larger models, but in aligning physical
+capacity, economic structure, and real demand.<br />
+What comes next is not another leap in size, but the consolidation
+phase.</p>
+</blockquote>
+<h2 id="appendix-a-utilization-and-power-calculations">Appendix A:
+Utilization and Power Calculations</h2>
+<p>A.1 Framework and Definitions</p>
+<p>To understand the physical and economic imbalance between training
+(capital expenditure) and inference (revenue generation), we first
+define a minimal formal structure linking compute utilization, energy
+consumption, and throughput. The core objective is not precision
+forecasting but bounded reasoning: to show that small changes in
+utilization or architectural balance yield orders-of-magnitude
+differences in efficiency and viability.</p>
+<p>Let:</p>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(N_{GPUN}\)</span>​ = number of deployed
+GPUs</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(P_{GPU}\)</span>​ = average power draw per
+GPU (Watts)</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(U\)</span> = sustained utilization
+(fraction of peak load, e.g., 0.10 = 10%)</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(PUE\)</span> = power usage effectiveness
+(ratio of total site energy to IT energy)</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(H_{year}\)</span>​ = annual hours of
+operation = 8,760</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(E_{site}\)</span>​ = annual site energy
+use (kWh or TWh)</p>
+</div></li>
+</ul>
+<p>Then the site energy can be approximated as:</p>
+<p><span class="math display">\[E_{site} = N_{GPU} \times P_{GPU} \times
+U \times PUE \times H_{year}\]</span></p>
+<p>This gives a baseline energy envelope for a given configuration and
+utilization regime.<br />
+Because inference workloads are bursty and demand-driven, <span
+class="math inline">\(U\)</span> for inference typically ranges from
+5–15%, whereas training workloads sustain 70–90% during epochs that last
+weeks or months. The delta between these modes is the economic source of
+inefficiency: inference fleets idle far more often than training
+clusters, yet remain electrically and thermally active.</p>
+<h2 id="a.2-case-1-xai-colossus-cluster-memphis-2025">A.2 Case 1: xAI
+Colossus Cluster (Memphis, 2025)</h2>
+<blockquote>
+<p><strong>Inputs</strong></p>
+<p><span class="math inline">\(N_{GPU}\)</span> = 200,000 <span
+class="math inline">\((H100/H200 - class)\)</span></p>
+<p><span class="math inline">\(P_{GPU}\)</span> = 700 W (liquid-cooled
+SXM average)</p>
+<p><span class="math inline">\(PUE\)</span> = 1.4 (fleet-level,
+accounting for cooling and networking)</p>
+<p><span class="math inline">\(U\)</span> = 0.10 (inference
+baseline)</p>
+<p><span class="math inline">\(H_{year}\)</span> = 8,760 h</p>
+<p><strong>Computation</strong></p>
+<p><span class="math inline">\(E_{site}\)</span> = <span
+class="math inline">\(200,000 \times 700 \times 0.10 \times 1.4 \times
+8,760 = 1.717 \times 10^{10}\ kWh = 17.17\ TWh/yr\)</span></p>
+<p>That is, at 10% sustained utilization, the Colossus cluster would
+consume roughly 17 TWh annually, equivalent to the electricity use of
+~1.5 million U.S. homes. At 80% training utilization, the same cluster
+would rise to 137 TWh, illustrating the enormous energy spread driven
+purely by workload composition.</p>
+</blockquote>
+<h3 id="a.3-case-2-chatgpt-fleet-openai-2025"><span
+data-custom-style="Strong"><strong>A.3 Case 2: ChatGPT Fleet (OpenAI,
+2025)</strong></span></h3>
+<div data-custom-style="Normal (Web)">
+<p>This example uses the <span data-custom-style="Strong">query-driven
+approach</span>, linking FLOPs per query to physical compute.</p>
+</div>
+<div data-custom-style="Normal (Web)">
+<p><span data-custom-style="Strong">Given parameters:</span></p>
+</div>
+<ul>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(Q = 2.5 \times 10^{9}\)</span>
+queries/day</p>
+</div></li>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(\tau = 50\)</span> <span
+data-custom-style="katex-mathml"></span>tokens/query</p>
+</div></li>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(P_{m} = 1.76 \times 10^{12}\)</span>
+<span data-custom-style="katex-mathml"></span>parameters (GPT-4o
+scale)</p>
+</div></li>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(f_{op} = 2\)</span> FLOPs/param/token</p>
+</div></li>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(F_{GPU}\)</span><span
+data-custom-style="katex-mathml">=</span> <span class="math inline">\(60
+\times 10^{12}\)</span> <span
+data-custom-style="katex-mathml">FL</span>OPs/s per GPU</p>
+</div></li>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(P_{GPU} = 400\ W\)</span> (inference load
+average)</p>
+</div></li>
+<li><div data-custom-style="Normal (Web)">
+<p><span class="math inline">\(PUE\)</span> <span
+data-custom-style="katex-mathml">= 1.25</span></p>
+</div></li>
+</ul>
+<blockquote>
+<p><strong>FLOPs per query:</strong></p>
+<p><span class="math inline">\(F_{query} = \tau \times P_{m} \times
+f_{op} = 50 \times 1.76 \times 10^{12} \times 2 = 1.76 \times
+10^{14}\)</span></p>
+<p><strong>Total daily FLOPs:</strong></p>
+<p><span class="math inline">\(F_{day} = Q \times F_{query} = 2.5 \times
+10^{9} \times 1.76 \times 10^{14} = 4.4 \times 10^{23}\)</span></p>
+<p><strong>GPU-seconds per day:</strong></p>
+<p><span class="math inline">\(GPU_{sec/day} = F_{day}/F_{GPU} =
+\frac{4.4 \times 10^{23}}{60 \times 10^{12}} = 7.33 \times
+10^{9}\)</span></p>
+<p><strong>Concurrent GPUs:</strong></p>
+<p><span class="math inline">\(NGPU,active =
+\frac{GPU_{sec/day}}{86,400} = 84,800\)</span></p>
+<p><strong>IT Power:</strong></p>
+<p><span class="math inline">\(P_{IT} = N_{GPU,active} \times P_{GPU} =
+84,800 \times 400 = 33.9\ MW\)</span></p>
+<p><strong>Site Power (with PUE):</strong></p>
+<p><span class="math inline">\(P_{site} = 33.9 \times 1.25 = 42.4\
+MW\)</span></p>
+<p><strong>Annual Energy:</strong></p>
+</blockquote>
+<div data-custom-style="Normal (Web)">
+<blockquote>
+<p><span class="math display">\[E_{site} = 42.4 \times
+\frac{8,760}{10^{6}} = 372\ GWh/yr = 0.372\ TWh/yr\]</span></p>
+</blockquote>
+</div>
+<blockquote>
+<p>This aligns closely with top-down financial proxies (based on $/query
+cost), supporting a utilization range between <span
+data-custom-style="Strong">10–15%</span>, consistent with smaller
+benchmark clusters.</p>
+</blockquote>
+<h2 id="a.4-sensitivity-analysis"><span data-custom-style="Strong">A.4
+Sensitivity Analysis</span></h2>
+<p>Let <span class="math inline">\(U\)</span> vary from 5% to 15%.
+Holding <span class="math inline">\(N_{GPU},\ P_{GPU}\ and\ PUE\)</span>
+constant:</p>
+<p><span class="math display">\[E_{site}(U) \propto U\]</span></p>
+<blockquote>
+<p>Thus, for Colossus:</p>
+</blockquote>
+<table style="width:55%;">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Utilization (U)</strong></th>
+<th><strong>Annual Energy (TWh)</strong></th>
+<th><strong>Relative Efficiency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5%</td>
+<td>8.6</td>
+<td>0.5× baseline</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>17.2</td>
+<td>1.0× baseline</td>
+</tr>
+<tr>
+<td>15%</td>
+<td>25.8</td>
+<td>1.5× baseline</td>
+</tr>
+<tr>
+<td>80% (training)</td>
+<td>137.3</td>
+<td>8× baseline</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>This proportionality exposes the pathological energy elasticity of
+large-scale inference.<br />
+Even modest overbuilding multiplies fixed energy costs—because cooling,
+pumping, and base infrastructure cannot scale linearly down. Idle GPUs
+still radiate heat and draw power for basic cycling and
+synchronization</p>
+</blockquote>
+<h2 id="a.5-linking-physical-and-economic-disequilibrium">A.5 Linking
+Physical and Economic Disequilibrium</h2>
+<blockquote>
+<p>From these calculations, several principles emerge:</p>
+</blockquote>
+<ol type="1">
+<li><div data-custom-style="List Paragraph">
+<p><strong>Structural Inefficiency:</strong><br />
+Inference operates in the 5–15% utilization band, while fixed site
+infrastructure (power, cooling, real estate) remains ~80–90% active.
+This creates a large negative leverage between energy cost and economic
+output.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><strong>Capital Misallocation:<br />
+</strong>Training and inference are orthogonal economic functions:</p>
+</div></li>
+</ol>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Training = low frequency, high CAPEX, high specialization.</p>
+</div></li>
+</ul>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Inference = high frequency, low margin, scale-dependent.Merging them
+under one corporate balance sheet forces capital to chase both high-end
+specialization and mass-service elasticity—an inherently unstable
+model.</p>
+</div></li>
+</ul>
+<ol start="3" type="1">
+<li><div data-custom-style="List Paragraph">
+<p><strong>Energy Irreversibility:</strong><br />
+Because steady-state thermodynamics dominate data center design, energy
+use cannot drop linearly with demand. Thus, even during off-peak hours,
+power draw remains near constant, invalidating “elastic compute”
+economics at hyperscale.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><strong>Analogy to Fabrication Economics</strong>:<br />
+This mirrors the semiconductor industry before bifurcation: fabs
+(capital-intensive, slow-cycle) were decoupled from design firms
+(fast-cycle, innovation-driven). A similar split between training
+infrastructure providers and inference operators is the natural
+equilibrium outcome.</p>
+</div></li>
+</ol>
+<h2 id="a.6-conclusion">A.6 Conclusion</h2>
+<blockquote>
+<p>The utilization and power calculations illustrate the boundary
+condition: training drives peak demand, inference sustains minimal
+utilization, and the two together form a structurally loss-making loop
+under a single-entity model. This disequilibrium explains why AI
+infrastructure appears to defy standard return-on-capital
+expectations—because the real physical utilization lags the financial
+narratives of growth. Only architectural and corporate separation can
+restore balance.</p>
+</blockquote>
+<h1 id="appendix-b-stylized-economic-equilibrium">Appendix B — Stylized
+Economic Equilibrium</h1>
+<blockquote>
+<p>The following model is not intended as a predictive financial
+analysis, but as a conceptual framework illustrating the structural
+imbalance between cost and utilization in large-scale AI systems.<br />
+It abstracts the operating dynamics of an AI enterprise into a minimal
+algebraic form sufficient to expose the disequilibrium mechanism.</p>
+</blockquote>
+<h2 id="b.1.-framework">B.1. Framework</h2>
+<blockquote>
+<p>Let:</p>
+<p>U = average utilization rate (fraction of installed GPU capacity
+actively used)</p>
+<p><span class="math inline">\(R_{q}\)</span> = average revenue per
+query (USD/query)</p>
+<p><span class="math inline">\(Q\)</span> = total number of queries
+processed per period</p>
+<p><span class="math inline">\(D\)</span> = depreciation of hardware and
+infrastructure per period</p>
+<p><span class="math inline">\(C_{t}\)</span>​ = training cost amortized
+over the model’s useful life</p>
+<p><span class="math inline">\(O\)</span> = operating expense per period
+(labor, energy, networking)</p>
+<p>Then:</p>
+<p><span class="math inline">\(\Pi = (U \cdot R_{q} \cdot Q) - (D + Ct +
+O)\)</span></p>
+<p>where <span class="math inline">\(\Pi\)</span> is the net operating
+profit per period.</p>
+</blockquote>
+<hr />
+<h2 id="b.2.-derivatives-and-sensitivities">B.2. Derivatives and
+Sensitivities</h2>
+<blockquote>
+<p>Differentiating with respect to key parameters yields:</p>
+</blockquote>
+<p><span class="math display">\[\ \ \ \ \ \ \ \ \ \ \ \
+\frac{\partial\Pi}{\partial U} = R_{q}Q &gt; 0\]</span></p>
+<p><span class="math display">\[\frac{\partial\Pi}{\partial C_{t}} = -
+1\]</span></p>
+<p><span class="math display">\[\frac{\partial\Pi}{\partial R_{q}} =
+UQ\]</span></p>
+<blockquote>
+<p><strong>Interpretation</strong>:</p>
+<p>Profitability scales linearly with utilization; however, <span
+class="math inline">\(U\)</span> is empirically bounded at ~10–20%.</p>
+<p>Training cost <span class="math inline">\(C_{t}\)</span>​ is fixed and
+periodic, introducing a negative offset that cannot be amortized
+effectively when utilization is low.</p>
+<p>Revenue per query <span class="math inline">\(R_{q}\)</span> is
+constrained by market competition and user willingness to pay; its
+elasticity is minimal.</p>
+<p>Thus, under realistic conditions:</p>
+</blockquote>
+<p><span class="math inline">\(\frac{\partial\Pi}{\partial U} \gg
+\partial\Pi/\partial R_{q}\)</span> ​</p>
+<blockquote>
+<p>meaning utilization dominates all other drivers of profitability, yet
+is the one variable least amenable to improvement under current
+architectures.</p>
+</blockquote>
+<hr />
+<h2 id="b.3.-structural-implication">B.3. Structural Implication</h2>
+<blockquote>
+<p>If <span class="math inline">\(U\)</span> remains below the breakeven
+threshold:</p>
+<p><span class="math display">\[U* = \frac{D + C_{t} +
+O}{R_{qQ}}\]</span></p>
+<p>then the enterprise operates at structural loss regardless of
+incremental revenue growth.<br />
+Empirically, with <span class="math inline">\(U \approx 0.1\)</span> and
+<span class="math inline">\(R_{q}\)</span> ​ on the order of <span
+class="math inline">\((\$ 10^{\left\{ - 3 \right\}}\ to\ \$ 10^{\left\{
+- 4 \right\}})\)</span> per query, <span
+class="math inline">\(U^{*}\)</span> is unattainable without drastic
+cost reduction or architectural change.</p>
+<p>Because training cost (<span class="math inline">\(C_{t}\)</span>)
+and depreciation (<span class="math inline">\(D\)</span>) scale
+superlinearly with model size, and inference revenue (<span
+class="math inline">\(R_{q}Q\)</span>) scales sublinearly with user
+adoption, the equilibrium cannot close through volume alone.<br />
+This produces a negative-return scaling regime—larger models yield lower
+return on capital even if total usage rises.</p>
+</blockquote>
+<h2 id="b.4.-economic-interpretation">B.4. Economic Interpretation</h2>
+<blockquote>
+<p>The algebraic form reveals the fundamental disequilibrium:</p>
+<p>Training costs behave as front-loaded capital expenditures with long
+payback periods.</p>
+<p>Inference revenues behave as low-margin, volume-dependent cash flows
+with diminishing marginal yield.</p>
+<p>Utilization, the only lever connecting the two, is physically capped
+by the intermittency of inference workloads and the inflexibility of
+datacenter infrastructure.</p>
+<p>In such a system, no combination of scale or price can reconcile cost
+and revenue. Equilibrium requires structural change — either by reducing
+fixed costs (outsourced training) or increasing utilization through
+architectural specialization (dedicated inference providers).</p>
+</blockquote>
+<h2 id="b.5.-comparative-note">B.5. Comparative Note</h2>
+<blockquote>
+<p>This pattern mirrors the structural transformation of semiconductor
+economics in the early 1990s. Integrated device manufacturers reached
+negative marginal returns at low fab utilization, triggering the rise of
+fabless design firms and independent foundries.<br />
+The same algebra applied: capital intensity outpaced throughput, forcing
+bifurcation between high-fixed-cost producers and low-fixed-cost
+consumers of fabrication services.</p>
+</blockquote>
+<h2 id="b.6.-summary-statement">B.6. Summary Statement</h2>
+<blockquote>
+<p>When <span
+class="math inline">\(U\)</span> is low and fixed costs dominate, the system’s steady state is negative
+return.The only path to equilibrium is structural specialization, not scale</p>
+</blockquote>
+<hr />
+<h1
+id="appendix-c-query-level-cost-modeling-financial-sensitivity"><span
+data-custom-style="Strong">Appendix C: Query-Level Cost Modeling
+(Financial Sensitivity)</span></h1>
+<hr />
+<h2 id="c.1-purpose">C.1 Purpose</h2>
+<blockquote>
+<p>To complement the physical-utilization analysis of Appendix A,
+Appendix C translates compute performance and energy consumption into
+financial efficiency metrics. It evaluates the cost dynamics of AI
+workloads — showing that the marginal cost per query remains high and
+non-scalable under low utilization.</p>
+</blockquote>
+<h2 id="c.2-framework">C.2 Framework</h2>
+<blockquote>
+<p>We define:</p>
+</blockquote>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(C_{GPUh}\)</span>: cost per GPU-hour
+(e.g., $1.50 – $2.00 on cloud H100 instances)</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(Q\)</span>: queries/day</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(c_{q}\)</span>​: cost per query
+($/query)</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(H_{GPU}\)</span>​: total GPU-hours/day</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(U\)</span>: utilization fraction</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p><span class="math inline">\(N_{GPU}\)</span>​: number of deployed
+GPUs</p>
+</div></li>
+</ul>
+<blockquote>
+<p>Core relationships:</p>
+</blockquote>
+<p><span class="math display">\[H_{GPU} = N_{GPU} \times 24 \times
+U\]</span></p>
+<p><span class="math display">\[c_{q} = \frac{H_{GPU} \times
+C_{GPUh}}{Q}\ \ \]</span></p>
+<h2 id="c.3-worked-example-1-openai-chatgpt-2025">C.3 Worked Example 1 —
+OpenAI (ChatGPT, 2025)</h2>
+<blockquote>
+<p>(Based on Method B in Appendix A)</p>
+<p><span class="math inline">\(Q = 2.5 \times 10^{9}\)</span>
+queries/day</p>
+<p><span class="math display">\[C_{GPUh} = \$ 1.50\]</span></p>
+<p><span class="math display">\[N_{GPU} = 85,000\]</span></p>
+<p><span class="math display">\[U = 0.10\]</span></p>
+<p><span class="math display">\[H_{GPU} = 85,000 \times 24 \times 0.10 =
+204,000\]</span></p>
+<p><span class="math display">\[c_{q} = \frac{204,000 \times 1.50}{2.5
+\times 10^{9}} = 1.22 \times 10^{- 4} = \$ 0.00012\]</span></p>
+<p>That is, $0.0001 per query just in GPU time — before overhead,
+networking, or profit margin.<br />
+At 15% utilization, <span class="math inline">\(c_{q}\)</span> falls
+only to $0.00008, confirming the weak scaling with demand.</p>
+</blockquote>
+<h2 id="c.4-worked-example-2-xai-colossus-2025">C.4 Worked Example 2 —
+xAI (Colossus, 2025)</h2>
+<blockquote>
+<p>(Using same parameters as Appendix A)<br />
+If Colossus runs 200,000 GPUs at 10% utilization, even without knowing Q
+we can invert to find the break-even query volume for $0.001/query:</p>
+<p><span class="math display">\[Q = \frac{H_{GPU} \times
+C_{GPUh}}{c_{q}} = \frac{200,000 \times 24 \times 0.10 \times
+1.50}{0.001} = 7.2 \times 10^{9}\ queries/day\]</span></p>
+<p>Thus, Colossus must process ≈ 7 billion daily queries to achieve a
+$0.001 marginal cost per query — several times OpenAI’s 2025 load —
+simply to break even on GPU time alone.</p>
+</blockquote>
+<h2 id="c.5-sensitivity-table">C.5 Sensitivity Table</h2>
+<table style="width:98%;">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Utilization</strong></th>
+<th><strong>Cost/query ($, GPU-only)</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">5%</td>
+<td>0.00024</td>
+<td>Grossly underutilized; majority of cost sunk in idle power</td>
+</tr>
+<tr>
+<td style="text-align: center;">10%</td>
+<td>0.00012</td>
+<td>Baseline in main text</td>
+</tr>
+<tr>
+<td style="text-align: center;">15%</td>
+<td>0.00008</td>
+<td>Upper realistic bound</td>
+</tr>
+<tr>
+<td style="text-align: center;">50%</td>
+<td>0.000024</td>
+<td>Approaches physical limits; requires near-constant demand</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c.6-interpretation">C.6 Interpretation</h2>
+<ol type="1">
+<li><div data-custom-style="List Paragraph">
+<p>Economic Compression:<br />
+Cost per query scales inversely with utilization, not with hardware
+size. Adding GPUs without proportional load increases unit cost.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Revenue–Cost Mismatch:<br />
+Inference demand (millions of lightweight queries) cannot absorb CAPEX
+and OPEX designed for training-scale power budgets.</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Path to Equilibrium:<br />
+Economic efficiency requires bifurcation of business models:</p>
+</div></li>
+</ol>
+<ul>
+<li><div data-custom-style="List Paragraph">
+<p>Training clusters as high-CAPEX, low-frequency service providers
+(fab-like).</p>
+</div></li>
+<li><div data-custom-style="List Paragraph">
+<p>Inference operators as high-volume, thin-margin distributors.</p>
+</div></li>
+</ul>
+</body>
+</html>
